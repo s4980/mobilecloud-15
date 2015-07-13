@@ -13,8 +13,8 @@ public class Video {
     private String location;
     private String subject;
     private String contentType;
-    private double totalSumOfStars = 0;
-    private double totalNumberOfStars = 0;
+    private float totalSumOfStars = 0;
+    private float totalNumberOfStars = 0;
 
     @JsonIgnore
     private String dataUrl;
@@ -77,33 +77,29 @@ public class Video {
         this.contentType = contentType;
     }
 
-    public double getTotalSumOfStars() {
+    public float getTotalSumOfStars() {
         return totalSumOfStars;
     }
 
-    public void setTotalSumOfStars(double totalSumOfStars) {
+    public void setTotalSumOfStars(float totalSumOfStars) {
         this.totalSumOfStars = totalSumOfStars;
     }
 
-    public double getTotalNumberOfStars() {
+    public float getTotalNumberOfStars() {
         return totalNumberOfStars;
     }
 
-    public void setTotalNumberOfStars(double totalNumberOfStars) {
+    public void setTotalNumberOfStars(float totalNumberOfStars) {
         this.totalNumberOfStars = totalNumberOfStars;
     }
 
-    public void addRating(int numberOfStars) {
+    public void addRating(float numberOfStars) {
         setTotalSumOfStars(getTotalSumOfStars() + numberOfStars);
         setTotalNumberOfStars(getTotalNumberOfStars() + 1);
     }
 
     public float getAverageRating() {
-        if (getTotalNumberOfStars() > 0) {
-            return (float) (getTotalSumOfStars() / getTotalNumberOfStars());
-        } else {
-            return 0;
-        }
+        return getTotalNumberOfStars() > 0 ? getTotalSumOfStars() / getTotalNumberOfStars() : 0;
     }
 
     @Override

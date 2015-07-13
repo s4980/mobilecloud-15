@@ -87,15 +87,15 @@ import video.mooc.coursera.videodownloader.api.webdata.VideoStatus;
  */
 public interface VideoServiceProxy {
 
-    public static final String DATA_PARAMETER = "data";
+    String DATA_PARAMETER = "data";
 
-    public static final String ID_PARAMETER = "id";
+    String ID_PARAMETER = "id";
 
-    public static final String VIDEO_SVC_PATH = "/video";
+    String VIDEO_SVC_PATH = "/video";
 
-    public static final String VIDEO_INFO_PATH = VIDEO_SVC_PATH + "/{id}";
+    String VIDEO_INFO_PATH = VIDEO_SVC_PATH + "/{id}";
 
-    public static final String VIDEO_DATA_PATH = VIDEO_INFO_PATH + "/data";
+    String VIDEO_DATA_PATH = VIDEO_INFO_PATH + "/data";
 
     /**
      * This endpoint in the API returns a list of the videos that have
@@ -193,4 +193,6 @@ public interface VideoServiceProxy {
      */
     @DELETE(VIDEO_SVC_PATH)
     public void deleteVideos();
+
+
 }

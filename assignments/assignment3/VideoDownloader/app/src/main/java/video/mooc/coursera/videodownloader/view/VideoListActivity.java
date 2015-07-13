@@ -18,12 +18,16 @@ import android.widget.ListView;
 import video.mooc.coursera.videodownloader.R;
 import video.mooc.coursera.videodownloader.common.GenericActivity;
 import video.mooc.coursera.videodownloader.common.Utils;
+import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
 import video.mooc.coursera.videodownloader.presenter.VideoOps;
 import video.mooc.coursera.videodownloader.utils.VideoStorageUtils;
 import video.mooc.coursera.videodownloader.view.ui.FloatingActionButton;
 import video.mooc.coursera.videodownloader.view.ui.UploadVideoDialogFragment;
 import video.mooc.coursera.videodownloader.view.ui.VideoAdapter;
+
+import static video.mooc.coursera.videodownloader.model.services.RateVideoService.ACTION_RATE_VIDEO_SERVICE_RESPONSE;
+import static video.mooc.coursera.videodownloader.model.services.UploadVideoService.ACTION_UPLOAD_SERVICE_RESPONSE;
 
 /**
  * This Activity can be used upload a selected video to a Video
@@ -141,14 +145,15 @@ public class VideoListActivity
 
         // Create an Intent filter that handles Intents from the
         // UploadVideoService.
-        IntentFilter intentFilter =
-                new IntentFilter(UploadVideoService.ACTION_UPLOAD_SERVICE_RESPONSE);
-        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        IntentFilter uploadIntentFilter = new IntentFilter();
+        uploadIntentFilter.addAction(ACTION_UPLOAD_SERVICE_RESPONSE);
+        uploadIntentFilter.addAction(ACTION_RATE_VIDEO_SERVICE_RESPONSE);
+        uploadIntentFilter.addCategory(Intent.CATEGORY_DEFAULT);
 
         // Register the BroadcastReceiver.
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(mUploadResultReceiver,
-                        intentFilter);
+                        uploadIntentFilter);
     }
 
     /**
@@ -179,9 +184,15 @@ public class VideoListActivity
         @Override
         public void onReceive(Context context,
                               Intent intent) {
-            // Starts an AsyncTask to get fresh Video list from the
-            // Video Service.
-            getOps().getVideoList();
+            if(ACTION_UPLOAD_SERVICE_RESPONSE.equals(intent.getAction())) {
+                // Starts an AsyncTask to get fresh Video list from the
+                // Video Service.
+                getOps().getVideoList();
+            }
+            if (ACTION_RATE_VIDEO_SERVICE_RESPONSE.equals(intent.getAction())) {
+                // for now
+                getOps().getVideoList();
+            }
         }
     }
 
@@ -317,7 +328,9 @@ public class VideoListActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_deleteall) {
+
+            // TODO: call rest api delete all url
             return true;
         }
         return super.onOptionsItemSelected(item);

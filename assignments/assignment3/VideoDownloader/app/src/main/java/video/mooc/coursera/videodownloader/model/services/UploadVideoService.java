@@ -152,7 +152,7 @@ public class UploadVideoService
                        .Builder(this)
                        .setContentTitle("Video Upload") 
                        .setContentText("Upload in progress") 
-                       .setSmallIcon(R.drawable.ic_notify_file_upload)
+                       .setSmallIcon(R.drawable.ic_file_upload_white_48dp)
                        .setProgress(0,
                                     0,
                                     true);

@@ -1,10 +1,14 @@
 package video.mooc.coursera.videodownloader.view.ui;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -12,6 +16,8 @@ import java.util.List;
 
 import video.mooc.coursera.videodownloader.R;
 import video.mooc.coursera.videodownloader.api.webdata.Video;
+import video.mooc.coursera.videodownloader.model.services.RateVideoService;
+import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
 
 /**
  * Show the view for each Video's meta-data in a ListView.
@@ -72,9 +78,23 @@ public class VideoAdapter
                 mInflater.inflate(R.layout.video_list_item,null);
         }
 
-        TextView titleText =
-            (TextView) convertView.findViewById(R.id.tvVideoTitle);
+        TextView titleText = (TextView) convertView.findViewById(R.id.tvVideoTitle);
         titleText.setText(video.getTitle());
+
+        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.ratingBar);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar,
+                                        float rating,
+                                        boolean fromUser) {
+
+                // call rest api to add new rating for video
+
+                // call rest api to get average rating for video
+
+                // update rating bar with average ratings for video
+
+            }
+        });
 
         return convertView;
     }
@@ -131,3 +151,4 @@ public class VideoAdapter
         return position;
     }
 }
+
