@@ -7,20 +7,25 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import video.mooc.coursera.videodownloader.R;
+import video.mooc.coursera.videodownloader.api.webdata.Video;
 import video.mooc.coursera.videodownloader.common.GenericActivity;
 import video.mooc.coursera.videodownloader.common.Utils;
 import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
 import video.mooc.coursera.videodownloader.presenter.VideoOps;
+import video.mooc.coursera.videodownloader.utils.Constants;
 import video.mooc.coursera.videodownloader.utils.VideoStorageUtils;
 import video.mooc.coursera.videodownloader.view.ui.FloatingActionButton;
 import video.mooc.coursera.videodownloader.view.ui.UploadVideoDialogFragment;
@@ -147,7 +152,6 @@ public class VideoListActivity
         // UploadVideoService.
         IntentFilter uploadIntentFilter = new IntentFilter();
         uploadIntentFilter.addAction(ACTION_UPLOAD_SERVICE_RESPONSE);
-        uploadIntentFilter.addAction(ACTION_RATE_VIDEO_SERVICE_RESPONSE);
         uploadIntentFilter.addCategory(Intent.CATEGORY_DEFAULT);
 
         // Register the BroadcastReceiver.
@@ -184,15 +188,9 @@ public class VideoListActivity
         @Override
         public void onReceive(Context context,
                               Intent intent) {
-            if(ACTION_UPLOAD_SERVICE_RESPONSE.equals(intent.getAction())) {
                 // Starts an AsyncTask to get fresh Video list from the
                 // Video Service.
                 getOps().getVideoList();
-            }
-            if (ACTION_RATE_VIDEO_SERVICE_RESPONSE.equals(intent.getAction())) {
-                // for now
-                getOps().getVideoList();
-            }
         }
     }
 
@@ -291,6 +289,29 @@ public class VideoListActivity
     @Override
     public void setAdapter(VideoAdapter videoAdapter) {
         mVideosList.setAdapter(videoAdapter);
+    }
+
+    @Override
+    public void setListener(VideoAdapter videoAdapter) {
+        mVideosList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Video video = (Video) mVideosList.getItemAtPosition(position);
+                if (video == null) {
+                    Toast.makeText(getApplicationContext(), "Unable to open video details", Toast.LENGTH_LONG).show();
+                }
+                Intent intent = new Intent(getBaseContext(), VideoDetailActivity.class);
+                intent.putExtra("videoId", video.getId());
+                intent.putExtra("videoTitle", video.getTitle());
+                intent.putExtra("videoAvgRating", video.getAverageRating());
+                intent.putExtra("videoTotalRatings", video.getTotalNumberOfStars());
+                intent.putExtra("videoDataUrl", video.getDataUrl());
+                intent.putExtra("videoDuration", video.getDuration());
+
+                startActivity(intent);
+                VideoListActivity.this.finish();
+            }
+        });
     }
 
     /**

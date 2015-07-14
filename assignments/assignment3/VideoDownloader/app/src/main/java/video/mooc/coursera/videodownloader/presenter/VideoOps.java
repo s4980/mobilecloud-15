@@ -13,6 +13,7 @@ import video.mooc.coursera.videodownloader.common.GenericAsyncTask;
 import video.mooc.coursera.videodownloader.common.GenericAsyncTaskOps;
 import video.mooc.coursera.videodownloader.common.Utils;
 import video.mooc.coursera.videodownloader.model.mediator.VideoDataMediator;
+import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
 import video.mooc.coursera.videodownloader.view.ui.VideoAdapter;
 
@@ -49,6 +50,8 @@ public class VideoOps
          * Sets the Adapter that contains List of Videos.
          */
         void setAdapter(VideoAdapter videoAdapter);
+
+        void setListener(VideoAdapter videoAdapter);
     }
         
     /**
@@ -122,6 +125,7 @@ public class VideoOps
         
         // Set the adapter to the ListView.
         mVideoView.get().setAdapter(mAdapter);
+        mVideoView.get().setListener(mAdapter);
     }
 
     /**
@@ -132,9 +136,15 @@ public class VideoOps
     public void uploadVideo(Uri videoUri){
         // Sends an Intent command to the UploadVideoService.
         mVideoView.get().getApplicationContext().startService
-            (UploadVideoService.makeIntent 
-                 (mVideoView.get().getApplicationContext(),
-                  videoUri));
+                (UploadVideoService.makeIntent
+                        (mVideoView.get().getApplicationContext(),
+                                videoUri));
+    }
+
+    public void rateVideo(long id, float rating){
+        mVideoView.get().getActivityContext().startService(
+                RateVideoService.makeIntent(
+                        mVideoView.get().getApplicationContext(), id, rating, "Rate"));
     }
 
     /**

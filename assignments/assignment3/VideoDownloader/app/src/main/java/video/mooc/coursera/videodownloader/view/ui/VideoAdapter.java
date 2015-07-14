@@ -14,10 +14,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit.RestAdapter;
 import video.mooc.coursera.videodownloader.R;
+import video.mooc.coursera.videodownloader.api.proxy.VideoServiceProxy;
 import video.mooc.coursera.videodownloader.api.webdata.Video;
 import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
+
+import static video.mooc.coursera.videodownloader.utils.Constants.SERVER_URL;
 
 /**
  * Show the view for each Video's meta-data in a ListView.
@@ -69,7 +73,7 @@ public class VideoAdapter
     public View getView(int position,
                         View convertView,
                         ViewGroup parent) {
-        Video video = videoList.get(position);
+        final Video video = videoList.get(position);
 
         if (convertView == null) {
             LayoutInflater mInflater = (LayoutInflater)
@@ -81,20 +85,8 @@ public class VideoAdapter
         TextView titleText = (TextView) convertView.findViewById(R.id.tvVideoTitle);
         titleText.setText(video.getTitle());
 
-        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.ratingBar);
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar,
-                                        float rating,
-                                        boolean fromUser) {
-
-                // call rest api to add new rating for video
-
-                // call rest api to get average rating for video
-
-                // update rating bar with average ratings for video
-
-            }
-        });
+        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.ratingBarIndicator);
+        ratingBar.setRating(video.getAverageRating());
 
         return convertView;
     }

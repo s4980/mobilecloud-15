@@ -32,9 +32,11 @@ public class InMemoryVideoRepository implements VideoRepository {
     }
 
     @Override
-    public Video update(Video video) {
+    public Video update(long id, Video video) {
 
-        return videos.replace(video.getId(), video);
+        videos.replace(id, video);
+
+        return videos.get(id);
     }
 
     @Override

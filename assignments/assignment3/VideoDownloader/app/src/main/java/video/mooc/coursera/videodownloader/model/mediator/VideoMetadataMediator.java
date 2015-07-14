@@ -47,21 +47,22 @@ public class VideoMetadataMediator {
                 .create(VideoServiceProxy.class);
     }
 
-    public String rateVideo(Context context, long id, float rating) {
+    public Video rateVideo(Context context, long id, float rating) {
 
         Video video = mVideoServiceProxy.getVideo(id);
         if (video != null) {
             video.addRating(rating);
 
             Video updateVideo = mVideoServiceProxy.updateVideo(id, video);
+
             if (updateVideo != null) {
                 // Video successfully uploaded.
-                return STATUS_RATING_SUCCESSFUL;
+                return video;
             }
         }
 
-        // Error occured while uploading the video.
-        return STATUS_RATING_ERROR;
+        // Error occured while raing the video.
+        return null;
     }
 
     /**
@@ -74,7 +75,7 @@ public class VideoMetadataMediator {
         return (ArrayList<Video>) mVideoServiceProxy.getVideos();
     }
 
-    public Video getVideo(long id) {
+    public Video getVideoMetadata(long id) {
         return mVideoServiceProxy.getVideo(id);
     }
 }

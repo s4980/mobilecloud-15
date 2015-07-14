@@ -47,9 +47,9 @@ public class VideoServiceImpl implements VideoService {
     }
 
     @Override
-    public Video updateVideoMetadata(Video video) {
+    public Video updateVideoMetadata(long id, Video video) {
 
-        return metadataRepository.update(video);
+        return metadataRepository.update(id, video);
     }
 
     @Override

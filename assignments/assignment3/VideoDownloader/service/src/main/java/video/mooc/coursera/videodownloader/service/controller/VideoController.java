@@ -95,13 +95,17 @@ public class VideoController {
      * @param video
      * @return
      */
-    @RequestMapping(value = VIDEO_SVC_PATH,
+    @RequestMapping(value = VIDEO_ID_PATH,
                     method = PUT)
     public
     @ResponseBody
-    Video updateVideoMetadata(@RequestBody Video video,
+    Video updateVideoMetadata(@PathVariable(ID_PARAMETER) long id,
+                              @RequestBody Video video,
                               HttpServletResponse response) {
-        Video v = videoService.updateVideoMetadata(video);
+        Video v = null;
+        if (id == video.getId()) {
+            v = videoService.updateVideoMetadata(id, video);
+        }
 
         if (v == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);

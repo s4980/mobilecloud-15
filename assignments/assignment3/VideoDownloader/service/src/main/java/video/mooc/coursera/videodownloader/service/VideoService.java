@@ -19,7 +19,7 @@ public interface VideoService {
 
     Video getVideoMetadata(long id);
 
-    Video updateVideoMetadata(Video video);
+    Video updateVideoMetadata(long id, Video video);
 
     Collection<Video> getVideosMetadata();
 

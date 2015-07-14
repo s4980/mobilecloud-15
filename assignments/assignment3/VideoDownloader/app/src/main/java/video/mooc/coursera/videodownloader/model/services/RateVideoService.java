@@ -3,10 +3,10 @@ package video.mooc.coursera.videodownloader.model.services;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Parcelable;
 import android.support.v4.content.LocalBroadcastManager;
 
-import video.mooc.coursera.videodownloader.model.mediator.VideoDataMediator;
+import video.mooc.coursera.videodownloader.api.webdata.Video;
 import video.mooc.coursera.videodownloader.model.mediator.VideoMetadataMediator;
 
 public class RateVideoService extends IntentService {
@@ -58,11 +58,22 @@ public class RateVideoService extends IntentService {
      */
     public static Intent makeIntent(Context context,
                                     long id,
-                                    float rating) {
+                                    float rating,
+                                    String category) {
         return new Intent(context,
                           RateVideoService.class)
                             .putExtra(EXTRA_VIDEO_ID, id)
-                            .putExtra(EXTRA_VIDEO_RATING, rating);
+                            .putExtra(EXTRA_VIDEO_RATING, rating)
+                            .addCategory(category);
+    }
+
+    public static Intent makeIntent(Context context,
+                                    long id,
+                                    String category) {
+        return new Intent(context,
+                RateVideoService.class)
+                .putExtra(EXTRA_VIDEO_ID, id)
+                .addCategory(category);
     }
 
     @Override
@@ -70,11 +81,41 @@ public class RateVideoService extends IntentService {
         // Create VideoDataMediator that will mediate the communication
         // between Server and Android Storage.
         mVideoMediator = new VideoMetadataMediator();
-        mVideoMediator.rateVideo(getApplicationContext(), intent.getLongExtra(EXTRA_VIDEO_ID, 0), intent.getFloatExtra(EXTRA_VIDEO_RATING, 0));
+        if (intent.getCategories().contains("Rate")) {
+            Video video = mVideoMediator.rateVideo(getApplicationContext(), intent.getLongExtra(EXTRA_VIDEO_ID, 0), intent.getFloatExtra(EXTRA_VIDEO_RATING, 0));
+
+            // Send the Broadcast to VideoListActivity that the Video
+            // Upload is completed.
+            sendBroadcast(video);
+        }
+
+        if (intent.getCategories().contains("Get")) {
+            Video video = mVideoMediator.getVideoMetadata(intent.getLongExtra(EXTRA_VIDEO_ID, 0));
+
+            // Send the Broadcast to VideoListActivity that the Video
+            // Upload is completed.
+            sendBroadcast(video);
+        }
 
         // Send the Broadcast to VideoListActivity that the Video
         // Upload is completed.
-        sendBroadcast();
+//        sendBroadcast();
+    }
+
+    private void sendBroadcast(Video video) {
+        // Use a LocalBroadcastManager to restrict the scope of this
+        // Intent to the VideoUploadClient application.
+        Intent intent = new Intent(ACTION_RATE_VIDEO_SERVICE_RESPONSE);
+        intent.putExtra("videoId", video.getId());
+        intent.putExtra("videoTitle", video.getTitle());
+        intent.putExtra("videoAvgRating", video.getAverageRating());
+        intent.putExtra("videoTotalRatings", video.getTotalNumberOfStars());
+        intent.putExtra("videoDataUrl", video.getDataUrl());
+        intent.putExtra("videoDuration", video.getDuration());
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+
+        LocalBroadcastManager.getInstance(this)
+                .sendBroadcast(intent);
     }
 
     /**
@@ -86,6 +127,6 @@ public class RateVideoService extends IntentService {
         // Intent to the VideoUploadClient application.
         LocalBroadcastManager.getInstance(this)
                 .sendBroadcast(new Intent(ACTION_RATE_VIDEO_SERVICE_RESPONSE)
-                        .addCategory(Intent.CATEGORY_DEFAULT));
+                        .addCategory("Rate"));
     }
 }

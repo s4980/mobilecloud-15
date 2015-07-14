@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
-              xmlns:fab="http://schemas.android.com/apk/res-auto"
               android:id="@+id/videoListItem"
               android:orientation="vertical"
               android:padding="15dp"
@@ -26,20 +25,13 @@
             android:padding="5dp"
             android:textColor="@android:color/black"
             android:gravity="start"/>
-
-        <video.mooc.coursera.videodownloader.view.ui.FloatingActionButton
-            android:id="@+id/playVideoButton"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="center_vertical|right"
-            fab:fabDrawable="@drawable/ic_play_arrow_white_48dp"
-            fab:fabColor="@color/theme_primary"/>
     </LinearLayout>
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBarIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"/>
+        android:layout_gravity="bottom|left"
+        android:isIndicator="true"/>
 
 </LinearLayout>

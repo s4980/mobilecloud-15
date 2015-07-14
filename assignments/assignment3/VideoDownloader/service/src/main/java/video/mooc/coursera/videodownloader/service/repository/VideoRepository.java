@@ -18,7 +18,7 @@ public interface VideoRepository {
      * @param video
      * @return
      */
-    Video update(Video video);
+    Video update(long id, Video video);
 
     /**
      * Returns video metadata from repository
