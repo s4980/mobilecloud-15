@@ -71,11 +71,8 @@ public class UploadVideoService
      * @param videoUri
      * @return
      */
-    public static Intent makeIntent(Context context,
-                                    Uri videoUri) {
-        return new Intent(context, 
-                          UploadVideoService.class)
-                   .setData(videoUri);
+    public static Intent makeIntent(Context context, Uri videoUri) {
+        return new Intent(context, UploadVideoService.class).setData(videoUri);
     }
     
     /**

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
@@ -17,6 +18,9 @@ import video.mooc.coursera.videodownloader.common.GenericActivity;
 import video.mooc.coursera.videodownloader.common.Utils;
 import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.presenter.VideoOps;
+import video.mooc.coursera.videodownloader.utils.VideoStorageUtils;
+import video.mooc.coursera.videodownloader.view.ui.FloatingActionButton;
+import video.mooc.coursera.videodownloader.view.ui.UploadVideoDialogFragment;
 
 import static video.mooc.coursera.videodownloader.model.services.RateVideoService.ACTION_RATE_VIDEO_SERVICE_RESPONSE;
 
@@ -28,6 +32,11 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
      * result from UploadVideoService when a video upload completes.
      */
     private UploadResultReceiver mUploadResultReceiver;
+    /**
+     * The Floating Action Button that will show a Dialog Fragment to
+     * upload Video when user clicks on it.
+     */
+    private FloatingActionButton mPlayVideoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +47,12 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
 
         setContentView(R.layout.activity_video_detail);
 
-        final Intent intent = getIntent();
+        final Intent intent;
+        if (savedInstanceState == null) {
+            intent = getIntent();
+        } else {
+            intent = savedInstanceState.getParcelable("Saved_intent");
+        }
 //        intent.getLongExtra("video", 0);
 //        intent.getStringExtra("videoTitle");
 //        intent.getFloatExtra("videoAvgRating", 0);
@@ -69,10 +83,43 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
                         Utils.showToast(getApplicationContext(),
                                 "Video was rated");
                     }
+                }
+            });
 
+            // Get reference to the Floating Action Button.
+            mPlayVideoButton = (FloatingActionButton) findViewById(R.id.playVideoButton);
+
+            // Show the UploadVideoDialog Fragment when user clicks the
+            // button.
+            mPlayVideoButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent in = new Intent(getBaseContext(), VideoViewActivity.class);
+                    in.putExtra("videoDataUrl", intent.getStringExtra("videoDataUrl"));
+                    in.putExtra("videoDuration", intent.getLongExtra("videoDuration", 0));
+                    in.putExtra("videoTitle", intent.getStringExtra("videoTitle"));
+                    in.putExtra("videoUri", VideoStorageUtils.getRecordedVideoUri(intent.getStringExtra("videoTitle")));
+
+                    startActivityForResult(in, 1);
+                    // VideoDetailActivity.this.finish();
                 }
             });
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                // No need to do anything here
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent in = new Intent();
+        setResult(999, in);
+        finish();
     }
 
     @Override
@@ -113,6 +160,9 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
     protected void onPause() {
         // Call onPause() in superclass.
         super.onPause();
+
+        Bundle bundle = new Bundle();
+        onSaveInstanceState(bundle);
 
         // Unregister BroadcastReceiver.
         LocalBroadcastManager.getInstance(this)
@@ -175,4 +225,11 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
 //            }
         }
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("Saved_intent", getIntent());
+    }
+
 }

@@ -8,12 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import retrofit.RestAdapter;
+import retrofit.client.Response;
 import retrofit.mime.TypedFile;
 import video.mooc.coursera.videodownloader.api.proxy.VideoServiceProxy;
 import video.mooc.coursera.videodownloader.api.webdata.Video;
 import video.mooc.coursera.videodownloader.api.webdata.VideoStatus;
 import video.mooc.coursera.videodownloader.api.webdata.VideoStatus.VideoState;
 import video.mooc.coursera.videodownloader.utils.VideoMediaStoreUtils;
+import video.mooc.coursera.videodownloader.utils.VideoStorageUtils;
 
 import static video.mooc.coursera.videodownloader.api.constants.Constants.MAX_SIZE_MEGA_BYTE;
 import static video.mooc.coursera.videodownloader.utils.Constants.SERVER_URL;
@@ -44,7 +46,20 @@ public class VideoDataMediator {
      */
     public static final String STATUS_UPLOAD_ERROR =
         "Upload failed";
-    
+
+    /**
+     * Status code to indicate that file is successfully
+     * uploaded.
+     */
+    public static final String STATUS_DOWNLOAD_SUCCESSFUL =
+            "Download succeeded";
+
+    /**
+     * Status code to indicate that file upload failed.
+     */
+    public static final String STATUS_DOWNLOAD_ERROR =
+            "Download failed";
+
     /**
      * Defines methods that communicate with the Video Service.
      */
@@ -124,6 +139,28 @@ public class VideoDataMediator {
 
         // Error occured while uploading the video.
         return STATUS_UPLOAD_ERROR;
+    }
+
+    /**
+     * Downloads the Video having the given Id.
+     *
+     * @return A String indicating the status of the video download operation.
+     */
+    public String downloadVideo(Context context, long id) {
+
+        Video video = mVideoServiceProxy.getVideo(id);
+        if (video != null) {
+            Response response = mVideoServiceProxy.getVideoData(id);
+            if (response.getStatus() == 404) {
+                return STATUS_DOWNLOAD_ERROR;
+            }
+
+            File file = VideoStorageUtils.storeVideoInExternalDirectory(context, response, video.getTitle());
+
+            return (file != null) ? STATUS_DOWNLOAD_SUCCESSFUL : STATUS_DOWNLOAD_ERROR;
+        } else {
+            return STATUS_DOWNLOAD_ERROR;
+        }
     }
 
     /**

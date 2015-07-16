@@ -256,6 +256,12 @@ public class VideoListActivity
                                  Intent data) {
         Uri videoUri = null;
 
+        if (resultCode == 999) {
+
+            getOps().getVideoList();
+            return;
+        }
+
         // Check if the Result is Ok and upload the Video to the Video
         // Service.
         if (resultCode == Activity.RESULT_OK) {
@@ -308,8 +314,7 @@ public class VideoListActivity
                 intent.putExtra("videoDataUrl", video.getDataUrl());
                 intent.putExtra("videoDuration", video.getDuration());
 
-                startActivity(intent);
-                VideoListActivity.this.finish();
+                startActivityForResult(intent, 1);
             }
         });
     }
@@ -356,4 +361,5 @@ public class VideoListActivity
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

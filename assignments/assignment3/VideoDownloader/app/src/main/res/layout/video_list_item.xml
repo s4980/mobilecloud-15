@@ -7,7 +7,8 @@
               android:descendantFocusability="blocksDescendants"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="video.mooc.coursera.videodownloader.view.VideoListActivity">
+              tools:context="video.mooc.coursera.videodownloader.view.VideoListActivity"
+    >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -18,13 +19,14 @@
             android:id="@+id/tvVideoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="20sp"
             android:singleLine="true"
             android:ellipsize="start"
             android:layout_gravity="center_vertical|left"
             android:padding="5dp"
-            android:textColor="@android:color/black"
-            android:gravity="start"/>
+            android:textColor="@android:color/background_dark"
+            android:gravity="start"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <RatingBar
