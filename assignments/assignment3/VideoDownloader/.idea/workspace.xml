@@ -142,6 +142,60 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
               </PATH_ELEMENT>
             </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="VideoDownloader" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
           </tree_state>
         </projects_view>
       </state>
@@ -152,125 +206,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VideoMediaStoreUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoMediaStoreUtils.java">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/constants/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/ui/VideoAdapter.java">
+      <file leaf-file-name="VideoServiceProxy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/proxy/VideoServiceProxy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
               <folding>
-                <element signature="docComment;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;field#mContext#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;field#videoList#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#VideoAdapter#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#getView#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#add#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#getVideos#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#setVideos#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#getCount#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#getItem#0;class#VideoAdapter#0" expanded="false" />
-                <element signature="docComment;method#getItemId#0;class#VideoAdapter#0" expanded="false" />
+                <element signature="docComment;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#getVideos#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#addVideo#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#getVideo#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#updateVideo#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#setVideoData#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#getVideoData#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#deleteVideo#0;class#VideoServiceProxy#0" expanded="false" />
+                <element signature="docComment;method#deleteVideos#0;class#VideoServiceProxy#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoListActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoListActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48131868">
-              <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#REQUEST_VIDEO_CAPTURE#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#REQUEST_GET_VIDEO#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#mUploadResultReceiver#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#mUploadVideoButton#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#mVideosList#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;field#mRecordVideoUri#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onCreate#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onResume#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="method#onResume#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#registerReceiver#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onPause#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="method#onPause#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;class#UploadResultReceiver#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onReceive#0;class#UploadResultReceiver#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onVideoSelected#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="docComment;method#onActivityResult#0;class#VideoListActivity#0" expanded="false" />
-                <element signature="e#10712#10713#0" expanded="true" />
-                <element signature="e#10764#10765#0" expanded="true" />
-                <element signature="e#11977#11978#0" expanded="true" />
-                <element signature="e#12007#12008#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenericActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/common/GenericActivity.java">
+      <file leaf-file-name="Video.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/Video.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoDetailActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoDetailActivity.java">
+      <file leaf-file-name="VideoStatus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/VideoStatus.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;field#mUploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
-                <element signature="docComment;field#mPlayVideoButton#0;class#VideoDetailActivity#0" expanded="false" />
-                <element signature="e#4152#4839#0" expanded="true" />
-                <element signature="e#4838#4839#0" expanded="true" />
-                <element signature="docComment;class#UploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
-                <element signature="docComment;method#onReceive#0;class#UploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VideoStorageUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoStorageUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoViewActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoViewActivity.java">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-              <folding>
-                <element signature="e#3844#4063#0" expanded="true" />
-                <element signature="e#4062#4063#0" expanded="true" />
-              </folding>
+              <caret line="0" column="49" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Environment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/os/Environment.java">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="506" column="25" selection-start-line="506" selection-start-column="25" selection-end-line="506" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.3684971">
+              <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -2176,9 +2176,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/video_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_video_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/ui/VideoAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/presenter/VideoOps.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/Video.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/repository/VideoRepository.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/VideoServiceImpl.java" />
@@ -2186,7 +2184,6 @@
         <option value="$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/controller/VideoController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/repository/InMemoryVideoRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoMetadataMediator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/RateVideoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_video_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/UploadVideoService.java" />
@@ -2194,9 +2191,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoStorageUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoViewActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/video_list_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/RateVideoService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/presenter/VideoOps.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_video_detail.xml" />
       </list>
     </option>
   </component>
@@ -2232,29 +2232,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2262,15 +2239,37 @@
               <option name="myItemId" value="VideoDownloader" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+              <option name="myItemId" value="VideoDownloader" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="VideoDownloader" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2281,28 +2280,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2317,28 +2294,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2357,106 +2312,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="presenter" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mediator" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VideoDownloader" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2490,9 +2345,54 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VideoDownloader" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VideoDownloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VideoDownloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VideoDownloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2517,7 +2417,7 @@
       <recent name="video.mooc.coursera.videodownloader.view.VideoListActivity" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.app">
+  <component name="RunManager" selected="Gradle.VideoDownloader [clean]">
     <configuration default="false" name="VideoDownloader:app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -2821,7 +2721,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2829,11 +2729,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.4974293" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49485862" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5025707" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5051414" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30416667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42916667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2867,39 +2767,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/presenter/VideoOps.java</url>
-          <line>144</line>
-          <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoMetadataMediator.java</url>
           <line>78</line>
           <properties />
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java</url>
-          <line>150</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java</url>
-          <line>153</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoStorageUtils.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/ui/VideoAdapter.java</url>
@@ -2907,52 +2778,16 @@
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoListActivity.java</url>
-          <line>192</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/UploadVideoService.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java</url>
-          <line>130</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoViewActivity.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="86" />
+      <option name="time" value="96" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="videoTitle1.getPath()" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_play_arrow_white_48dp.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_file_download_white_48dp.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2984,7 +2819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3010,19 +2844,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_video_detail.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3030,19 +2855,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/video_list_activity.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.275862">
           <caret line="9" column="80" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="80" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/view/DisplayEventReceiver.java">
@@ -3081,24 +2905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/proxy/VideoServiceProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236995">
-          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
-          <folding>
-            <element signature="docComment;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#getVideos#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#addVideo#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#getVideo#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#updateVideo#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#setVideoData#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#getVideoData#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#deleteVideo#0;class#VideoServiceProxy#0" expanded="false" />
-            <element signature="docComment;method#deleteVideos#0;class#VideoServiceProxy#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/app/libs/android-support-v4.jar!/android/support/v4/content/LocalBroadcastManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15292354">
@@ -3106,60 +2912,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoMetadataMediator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3367052">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_RATING_SUCCESSFUL#0;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_RATING_ERROR#0;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="docComment;field#mVideoServiceProxy#0;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="docComment;method#VideoMetadataMediator#0;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="docComment;method#getVideoList#0;class#VideoMetadataMediator#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2310#2311#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_video_view.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6896553">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_video_detail.xml">
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6896553">
-          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2630058">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/Video.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/common/GenericAsyncTask.java">
@@ -3170,14 +2931,6 @@
             <element signature="e#776#777#0" expanded="false" />
             <element signature="e#795#796#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/RateVideoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3193,7 +2946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.32658958">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3207,27 +2959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/DownloadVideoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="50" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="50" />
-          <folding>
-            <element signature="docComment;field#ACTION_DOWNLOAD_SERVICE_RESPONSE#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;field#NOTIFICATION_ID#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;field#mVideoMediator#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;field#mNotifyManager#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;field#mBuilder#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#DownloadVideoService#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#DownloadVideoService#1;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#makeIntent#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#onHandleIntent#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#sendBroadcast#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#finishNotification#0;class#DownloadVideoService#0" expanded="false" />
-            <element signature="docComment;method#startNotification#0;class#DownloadVideoService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/ui/UploadVideoDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1618497">
@@ -3236,74 +2967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/UploadVideoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_UPLOAD_SUCCESSFUL#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_UPLOAD_ERROR_FILE_TOO_LARGE#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_UPLOAD_ERROR#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_DOWNLOAD_SUCCESSFUL#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#STATUS_DOWNLOAD_ERROR#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;field#mVideoServiceProxy#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;method#VideoDataMediator#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;method#uploadVideo#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;method#downloadVideo#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="docComment;method#getVideoList#0;class#VideoDataMediator#0" expanded="false" />
-            <element signature="e#6230#6231#0" expanded="true" />
-            <element signature="e#6302#6303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/presenter/VideoOps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;field#TAG#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;class#View#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#finish#0;class#View#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#setAdapter#0;class#View#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;field#mVideoView#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;field#mAsyncTask#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;field#mVideoMediator#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;field#mAdapter#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#VideoOps#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#onConfiguration#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#uploadVideo#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#getVideoList#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#doInBackground#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#onPostExecute#0;class#VideoOps#0" expanded="false" />
-            <element signature="docComment;method#displayVideoList#0;class#VideoOps#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/os/AsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="538" column="0" selection-start-line="538" selection-start-column="0" selection-end-line="538" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoMediaStoreUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3311,7 +2978,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="506" column="25" selection-start-line="506" selection-start-column="25" selection-end-line="506" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#0#34498#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6351#6352#0" expanded="false" />
+            <element signature="e#6404#6405#0" expanded="false" />
+            <element signature="e#6614#6615#0" expanded="false" />
+            <element signature="e#6665#6666#0" expanded="false" />
+            <element signature="e#6714#6715#0" expanded="false" />
+            <element signature="e#6764#6765#0" expanded="false" />
+            <element signature="e#6801#6802#0" expanded="false" />
+            <element signature="e#6853#6854#0" expanded="false" />
+            <element signature="e#8918#8919#0" expanded="false" />
+            <element signature="e#8957#8958#0" expanded="false" />
+            <element signature="e#9180#9181#0" expanded="false" />
+            <element signature="e#9215#9216#0" expanded="false" />
+            <element signature="e#9461#9462#0" expanded="false" />
+            <element signature="e#9499#9500#0" expanded="false" />
+            <element signature="e#12567#12568#0" expanded="false" />
+            <element signature="e#12604#12605#0" expanded="false" />
+            <element signature="e#24053#24054#0" expanded="false" />
+            <element signature="e#24100#24101#0" expanded="false" />
+            <element signature="e#27102#27103#0" expanded="false" />
+            <element signature="e#27154#27155#0" expanded="false" />
+            <element signature="e#31233#31234#0" expanded="false" />
+            <element signature="e#31277#31278#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3319,6 +3011,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41763005">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/media/MediaPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24752475">
+          <caret line="969" column="72" selection-start-line="969" selection-start-column="72" selection-end-line="969" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/widget/VideoView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33168316">
+          <caret line="351" column="32" selection-start-line="351" selection-start-column="32" selection-end-line="351" selection-end-column="32" />
+          <folding>
+            <element signature="e#10160#10161#0" expanded="false" />
+            <element signature="e#10198#10199#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3982" column="16" selection-start-line="3982" selection-start-column="16" selection-end-line="3982" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/video_list_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5897436">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/common/GenericActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -3343,93 +3087,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoStorageUtils.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoMediaStoreUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/media/MediaPlayer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/RateVideoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24752475">
-          <caret line="969" column="72" selection-start-line="969" selection-start-column="72" selection-end-line="969" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/widget/VideoView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33168316">
-          <caret line="351" column="32" selection-start-line="351" selection-start-column="32" selection-end-line="351" selection-end-column="32" />
+        <state vertical-scroll-proportion="1.965318">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
-            <element signature="e#10160#10161#0" expanded="false" />
-            <element signature="e#10198#10199#0" expanded="false" />
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/app/Activity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoMetadataMediator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3982" column="16" selection-start-line="3982" selection-start-column="16" selection-end-line="3982" selection-end-column="16" />
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#169366#169367#0" expanded="true" />
-            <element signature="e#169414#169415#0" expanded="true" />
+            <element signature="docComment;class#VideoMetadataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_RATING_SUCCESSFUL#0;class#VideoMetadataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_RATING_ERROR#0;class#VideoMetadataMediator#0" expanded="false" />
+            <element signature="docComment;field#mVideoServiceProxy#0;class#VideoMetadataMediator#0" expanded="false" />
+            <element signature="docComment;method#VideoMetadataMediator#0;class#VideoMetadataMediator#0" expanded="false" />
+            <element signature="docComment;method#getVideoList#0;class#VideoMetadataMediator#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/common/GenericActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/mediator/VideoDataMediator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.14739884">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
-            <element signature="e#3844#4063#0" expanded="true" />
-            <element signature="e#4062#4063#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/video_list_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5897436">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;field#mUploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
-            <element signature="docComment;field#mPlayVideoButton#0;class#VideoDetailActivity#0" expanded="false" />
-            <element signature="e#4152#4839#0" expanded="true" />
-            <element signature="e#4838#4839#0" expanded="true" />
-            <element signature="docComment;class#UploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
-            <element signature="docComment;method#onReceive#0;class#UploadResultReceiver#0;class#VideoDetailActivity#0" expanded="false" />
+            <element signature="docComment;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_UPLOAD_SUCCESSFUL#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_UPLOAD_ERROR_FILE_TOO_LARGE#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_UPLOAD_ERROR#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_DOWNLOAD_SUCCESSFUL#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#STATUS_DOWNLOAD_ERROR#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;field#mVideoServiceProxy#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;method#VideoDataMediator#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;method#uploadVideo#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;method#downloadVideo#0;class#VideoDataMediator#0" expanded="false" />
+            <element signature="docComment;method#getVideoList#0;class#VideoDataMediator#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48131868">
-          <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5867052">
+          <caret line="266" column="22" selection-start-line="266" selection-start-column="16" selection-end-line="266" selection-end-column="22" />
           <folding>
             <element signature="docComment;class#VideoListActivity#0" expanded="false" />
             <element signature="docComment;field#REQUEST_VIDEO_CAPTURE#0;class#VideoListActivity#0" expanded="false" />
@@ -3439,20 +3154,151 @@
             <element signature="docComment;field#mVideosList#0;class#VideoListActivity#0" expanded="false" />
             <element signature="docComment;field#mRecordVideoUri#0;class#VideoListActivity#0" expanded="false" />
             <element signature="docComment;method#onCreate#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#onResume#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="method#onResume#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#registerReceiver#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#onPause#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="method#onPause#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;class#UploadResultReceiver#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#onReceive#0;class#UploadResultReceiver#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#onVideoSelected#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="docComment;method#onActivityResult#0;class#VideoListActivity#0" expanded="false" />
-            <element signature="e#10712#10713#0" expanded="true" />
-            <element signature="e#10764#10765#0" expanded="true" />
-            <element signature="e#11977#11978#0" expanded="true" />
-            <element signature="e#12007#12008#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/VideoStorageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15895954">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_video_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.136">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+          <folding>
+            <element signature="e#644#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/UploadVideoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6311881">
+          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/view/VideoDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.12283237">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="e#6602#6833#0" expanded="true" />
+            <element signature="e#6832#6833#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/presenter/VideoOps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7369943">
+          <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;field#TAG#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;class#View#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#finish#0;class#View#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#setAdapter#0;class#View#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;field#mVideoView#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;field#mAsyncTask#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;field#mVideoMediator#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;field#mAdapter#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#VideoOps#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#onConfiguration#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#uploadVideo#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#getVideoList#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#doInBackground#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#onPostExecute#0;class#VideoOps#0" expanded="false" />
+            <element signature="docComment;method#displayVideoList#0;class#VideoOps#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/model/services/DownloadVideoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8526012">
+          <caret line="108" column="53" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="74" />
+          <folding>
+            <element signature="docComment;field#ACTION_DOWNLOAD_SERVICE_RESPONSE#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;field#NOTIFICATION_ID#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;field#mVideoMediator#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;field#mNotifyManager#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;field#mBuilder#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#DownloadVideoService#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#DownloadVideoService#1;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#makeIntent#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#onHandleIntent#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#sendBroadcast#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#finishNotification#0;class#DownloadVideoService#0" expanded="false" />
+            <element signature="docComment;method#startNotification#0;class#DownloadVideoService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/proxy/VideoServiceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#getVideos#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#addVideo#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#getVideo#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#updateVideo#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#setVideoData#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#getVideoData#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#deleteVideo#0;class#VideoServiceProxy#0" expanded="false" />
+            <element signature="docComment;method#deleteVideos#0;class#VideoServiceProxy#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/Video.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/video/mooc/coursera/videodownloader/api/webdata/VideoStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/video/mooc/coursera/videodownloader/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="49" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/video/mooc/coursera/videodownloader/service/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3684971">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

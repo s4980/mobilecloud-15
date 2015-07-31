@@ -56,7 +56,8 @@ public class VideoViewActivity extends Activity {
         // create a progress bar while the video file is loading
         progressDialog = new ProgressDialog(VideoViewActivity.this);
         // set a title for the progress bar
-        progressDialog.setTitle(videoTitle.isEmpty()?"Video file": String.format("%s (%.0f sec)", videoTitle, videoDuration/1000.0));
+        progressDialog.setTitle(videoTitle.isEmpty() ? "Video file" 
+                                                     : String.format("%s (%.0f sec)", videoTitle, videoDuration/1000.0));
         // set a message for the progress bar
         progressDialog.setMessage("Loading...");
         //set the progress bar not cancelable on users' touch

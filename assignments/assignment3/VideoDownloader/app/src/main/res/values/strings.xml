@@ -11,5 +11,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_video_view">VideoViewActivity</string>
+    <string name="videoThumbnailDescription">Video Thumbnail</string>
 
 </resources>

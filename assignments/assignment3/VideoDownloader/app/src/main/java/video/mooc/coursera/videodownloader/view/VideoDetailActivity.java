@@ -4,12 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -27,16 +31,34 @@ import static video.mooc.coursera.videodownloader.model.services.RateVideoServic
 public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps> {
 
     public static final String OVERAL_RATING_FORMAT = "%.1f/%.0f";
+    
     /**
      * The Broadcast Receiver that registers itself to receive the
      * result from UploadVideoService when a video upload completes.
      */
     private UploadResultReceiver mUploadResultReceiver;
+    
     /**
      * The Floating Action Button that will show a Dialog Fragment to
      * upload Video when user clicks on it.
      */
     private FloatingActionButton mPlayVideoButton;
+
+    /**
+     * The Floating Action Button that will show a Dialog Fragment to
+     * upload Video when user clicks on it.
+     */
+    private FloatingActionButton mDownloadVideoButton;
+
+    /**
+     * Referance to ratingBar
+     */
+    private RatingBar mRatingBar;
+
+    /**
+     * Referance to rating details text field
+     */
+    private TextView mVideoRatingDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,70 +69,98 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
 
         setContentView(R.layout.activity_video_detail);
 
+        // Recive intent from either saved activity state or from other activity
         final Intent intent;
         if (savedInstanceState == null) {
             intent = getIntent();
         } else {
             intent = savedInstanceState.getParcelable("Saved_intent");
         }
-//        intent.getLongExtra("video", 0);
-//        intent.getStringExtra("videoTitle");
-//        intent.getFloatExtra("videoAvgRating", 0);
-//        intent.getFloatExtra("videoTotalRatings", 0);
-//        intent.getStringExtra("videoDataUrl");
-//        intent.getLongExtra("videoDuration", 0);
 
         if (intent != null) {
+            // Set video title from Intent 
             TextView videoTitle = (TextView) findViewById(R.id.videoTitle);
             videoTitle.setText(intent.getStringExtra("videoTitle"));
 
-            TextView videoRatingDetails = (TextView) findViewById(R.id.ratingDetails);
-            videoRatingDetails.setText(String.format(OVERAL_RATING_FORMAT, intent.getFloatExtra("videoAvgRating", 0), intent.getFloatExtra("videoTotalRatings", 0)));
+            // Set rating bar details from Intent 
+            mVideoRatingDetails = (TextView) findViewById(R.id.ratingDetails);
+            mVideoRatingDetails.setText(String.format(OVERAL_RATING_FORMAT,
+                    intent.getFloatExtra("videoAvgRating", 0),
+                    intent.getFloatExtra("videoTotalRatings", 0)));
 
-            final RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-            ratingBar.setRating(intent.getFloatExtra("videoAvgRating", 0));
-            ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            // Set rating bar value from Intent 
+            mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
+            mRatingBar.setRating(intent.getFloatExtra("videoAvgRating", 0));
+
+            // Add listener to rating bar to react on new ratings from user and to be able to display average video rating
+            mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 public void onRatingChanged(RatingBar ratingBar,
                                             float rating,
                                             boolean fromUser) {
 
-                    // call rest api to add new rating for video
-                    // getOps().rateVideo(video.getId(), rating);
+                    // Check if ratingBar change is comming from user input
                     if (fromUser) {
+                        // call rest api to add new rating for video
                         getApplicationContext().startService(RateVideoService.makeIntent(
-                                getApplicationContext(), intent.getLongExtra("videoId", 0), rating, "Rate"));
+                                                                getApplicationContext(),
+                                                                intent.getLongExtra("videoId", 0),
+                                                                rating,
+                                                                "Rate"));
                     } else {
-                        Utils.showToast(getApplicationContext(),
-                                "Video was rated");
+                        // If rating bar was changed from inside of the code to display average ratings display Toast
+                        Utils.showToast(getApplicationContext(), "Video was rated");
                     }
                 }
             });
 
-            // Get reference to the Floating Action Button.
+            // Get reference to ImageView
+            ImageView thumbnail = (ImageView) findViewById(R.id.videoThumbnail);
+            Uri videoUri = VideoStorageUtils.getRecordedVideoUri(intent.getStringExtra("videoTitle"));
+            if (videoUri != null) {
+                Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(videoUri.getPath(), MediaStore.Images.Thumbnails.MINI_KIND);
+                thumbnail.setImageBitmap(bitmap);
+            }
+
+            // Get reference to the Floating Play Action Button.
             mPlayVideoButton = (FloatingActionButton) findViewById(R.id.playVideoButton);
 
-            // Show the UploadVideoDialog Fragment when user clicks the
-            // button.
-            mPlayVideoButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Intent in = new Intent(getBaseContext(), VideoViewActivity.class);
-                    in.putExtra("videoDataUrl", intent.getStringExtra("videoDataUrl"));
-                    in.putExtra("videoDuration", intent.getLongExtra("videoDuration", 0));
-                    in.putExtra("videoTitle", intent.getStringExtra("videoTitle"));
-                    in.putExtra("videoUri", VideoStorageUtils.getRecordedVideoUri(intent.getStringExtra("videoTitle")));
+            if (mPlayVideoButton != null) {
+                // Show the UploadVideoDialog Fragment when user clicks the
+                // button.
+                mPlayVideoButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent in = new Intent(getBaseContext(), VideoViewActivity.class);
+                        in.putExtra("videoDataUrl", intent.getStringExtra("videoDataUrl"));
+                        in.putExtra("videoDuration", intent.getLongExtra("videoDuration", 0));
+                        in.putExtra("videoTitle", intent.getStringExtra("videoTitle"));
+                        in.putExtra("videoUri", VideoStorageUtils.getRecordedVideoUri(intent.getStringExtra("videoTitle")));
 
-                    startActivityForResult(in, 1);
-                    // VideoDetailActivity.this.finish();
-                }
-            });
-        }
-    }
+                        // Start VideoViewActivity to play video
+                        startActivityForResult(in, 1);
+                    }
+                });
+            }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                // No need to do anything here
+            // Get reference to the Floating Download Action Button.
+            mDownloadVideoButton = (FloatingActionButton) findViewById(R.id.playDownloadButton);
+
+            if (mDownloadVideoButton != null) {
+                mDownloadVideoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getOps().downloadVideo(intent.getLongExtra("videoId", 0));
+                    }
+                });
+            }
+
+            // Set visiblility for buttons
+            if (videoUri == null) {
+                // Video is not downloaded
+                mPlayVideoButton.setVisibility(View.GONE);
+                mDownloadVideoButton.setVisibility(View.VISIBLE);
+            } else {
+                mPlayVideoButton.setVisibility(View.VISIBLE);
+                mDownloadVideoButton.setVisibility(View.GONE);
             }
         }
     }
@@ -120,28 +170,6 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
         Intent in = new Intent();
         setResult(999, in);
         finish();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_video_detail, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -167,6 +195,12 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
         // Unregister BroadcastReceiver.
         LocalBroadcastManager.getInstance(this)
                 .unregisterReceiver(mUploadResultReceiver);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("Saved_intent", getIntent());
     }
 
     /**
@@ -200,36 +234,21 @@ public class VideoDetailActivity extends GenericActivity<VideoOps.View, VideoOps
         @Override
         public void onReceive(Context context,
                               Intent intent) {
-//            if (ACTION_RATE_VIDEO_SERVICE_RESPONSE.equals(intent.getAction())) {
-//                if (intent.getCategories().contains("Rate")) {
-////                    getApplicationContext().startService(RateVideoService.makeIntent(
-////                            getApplicationContext(), video.getId(), rating));
-//                }
+            // RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
-//                if (intent.getCategories() == Intent.CATEGORY_DEFAULT) {
-                    RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-                    if (ratingBar != null) {
-//                        intent.getLongExtra("video", 0);
-//                        intent.getStringExtra("videoTitle");
-//                        intent.getStringExtra("videoDataUrl");
-//                        intent.getLongExtra("videoDuration", 0);
-                        ratingBar.setRating(intent.getFloatExtra("videoAvgRating", 0));
+            // Update ratingBar with average ratings for video
+            if (mRatingBar != null) {
+                mRatingBar.setRating(intent.getFloatExtra("videoAvgRating", 0));
+            }
 
-                        TextView videoRatingDetails = (TextView) findViewById(R.id.ratingDetails);
-                        videoRatingDetails.setText(
-                                String.format(
-                                        OVERAL_RATING_FORMAT, intent.getFloatExtra("videoAvgRating", 0),
-                                                 intent.getFloatExtra("videoTotalRatings", 0)));
-                    }
-//                }
-//            }
+            // Update videoRatingDetails text filed with average video rating and total number of ratings
+            if (mVideoRatingDetails != null) {
+                // TextView videoRatingDetails = (TextView) findViewById(R.id.ratingDetails);
+                mVideoRatingDetails.setText(String.format(
+                        OVERAL_RATING_FORMAT,
+                        intent.getFloatExtra("videoAvgRating", 0),
+                        intent.getFloatExtra("videoTotalRatings", 0)));
+            }
         }
     }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putParcelable("Saved_intent", getIntent());
-    }
-
 }

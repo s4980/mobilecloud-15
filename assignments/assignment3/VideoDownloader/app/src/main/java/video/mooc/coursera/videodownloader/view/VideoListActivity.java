@@ -98,17 +98,14 @@ public class VideoListActivity
         setContentView(R.layout.video_list_activity);
 
         // Receiver for the notification.
-        mUploadResultReceiver =
-                new UploadResultReceiver();
+        mUploadResultReceiver = new UploadResultReceiver();
 
         // Get reference to the ListView for displaying the results
         // entered.
-        mVideosList =
-                (ListView) findViewById(R.id.videoList);
+        mVideosList = (ListView) findViewById(R.id.videoList);
 
         // Get reference to the Floating Action Button.
-        mUploadVideoButton =
-                (FloatingActionButton) findViewById(R.id.fabButton);
+        mUploadVideoButton = (FloatingActionButton) findViewById(R.id.fabButton);
 
         // Show the UploadVideoDialog Fragment when user clicks the
         // button.
@@ -124,8 +121,8 @@ public class VideoListActivity
         // passing in the VideoOps class to instantiate/manage and
         // "this" to provide VideoOps with the VideoOps.View instance.
         super.onCreate(savedInstanceState,
-                VideoOps.class,
-                this);
+                    VideoOps.class,
+                    this);
     }
 
     /**
@@ -157,7 +154,7 @@ public class VideoListActivity
         // Register the BroadcastReceiver.
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(mUploadResultReceiver,
-                        uploadIntentFilter);
+                                uploadIntentFilter);
     }
 
     /**
@@ -179,15 +176,13 @@ public class VideoListActivity
      * The Broadcast Receiver that registers itself to receive result
      * from UploadVideoService.
      */
-    private class UploadResultReceiver
-            extends BroadcastReceiver {
+    private class UploadResultReceiver extends BroadcastReceiver {
         /**
          * Hook method that's dispatched when the UploadService has
          * uploaded the Video.
          */
         @Override
-        public void onReceive(Context context,
-                              Intent intent) {
+        public void onReceive(Context context, Intent intent) {
                 // Starts an AsyncTask to get fresh Video list from the
                 // Video Service.
                 getOps().getVideoList();
@@ -208,35 +203,30 @@ public class VideoListActivity
                 final Intent videoGalleryIntent =
                         new Intent(Intent.ACTION_GET_CONTENT)
                                 .setType("video/*")
-                                .putExtra(Intent.EXTRA_LOCAL_ONLY,
-                                        true);
+                                .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 
                 // Verify the intent will resolve to an Activity.
                 if (videoGalleryIntent.resolveActivity(getPackageManager()) != null)
                     // Start an Activity to get the Video from Video
                     // Gallery.
-                    startActivityForResult(videoGalleryIntent,
-                            REQUEST_GET_VIDEO);
+                    startActivityForResult(videoGalleryIntent, REQUEST_GET_VIDEO);
                 break;
 
             case RECORD_VIDEO:
                 // Create a file to save the video.
                 mRecordVideoUri =
-                        VideoStorageUtils.getRecordedVideoUri
-                                (getApplicationContext());
+                        VideoStorageUtils.getRecordedVideoUri(getApplicationContext());
 
                 // Create an intent that will start an Activity to get
                 // Record Video.
-                final Intent recordVideoIntent =
-                        new Intent(MediaStore.ACTION_VIDEO_CAPTURE)
-                                .putExtra(MediaStore.EXTRA_OUTPUT,
-                                        mRecordVideoUri);
+                final Intent recordVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE)
+                                                    .putExtra(MediaStore.EXTRA_OUTPUT, 
+                                                            mRecordVideoUri);
 
                 // Verify the intent will resolve to an Activity.
-                if (recordVideoIntent.resolveActivity(getPackageManager()) != null)
+                if (recordVideoIntent.resolveActivity(getPackageManager()) != null) 
                     // Start an Activity to record a video.
-                    startActivityForResult(recordVideoIntent,
-                            REQUEST_VIDEO_CAPTURE);
+                    startActivityForResult(recordVideoIntent, REQUEST_VIDEO_CAPTURE);
                 break;
         }
     }
@@ -251,17 +241,14 @@ public class VideoListActivity
      * @param data
      */
     @Override
-    public void onActivityResult(int requestCode,
-                                 int resultCode,
-                                 Intent data) {
-        Uri videoUri = null;
-
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == 999) {
 
             getOps().getVideoList();
             return;
         }
 
+        Uri videoUri = null;
         // Check if the Result is Ok and upload the Video to the Video
         // Service.
         if (resultCode == Activity.RESULT_OK) {
@@ -273,9 +260,8 @@ public class VideoListActivity
             else if (requestCode == REQUEST_VIDEO_CAPTURE)
                 videoUri = mRecordVideoUri;
 
-            if (videoUri != null){
-                Utils.showToast(this,
-                        "Uploading video");
+            if (videoUri != null) {
+                Utils.showToast(this, "Uploading video");
 
                 // Upload the Video.
                 getOps().uploadVideo(videoUri);
@@ -283,9 +269,9 @@ public class VideoListActivity
         }
 
         // Pop a toast if we couldn't get a video to upload.
-        if (videoUri == null)
-            Utils.showToast(this,
-                    "Could not get video to upload");
+        if (videoUri == null) {
+            Utils.showToast(this, "Could not get video to upload");
+        }
     }
 
 
@@ -337,8 +323,7 @@ public class VideoListActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it
         // is present.
-        getMenuInflater().inflate(R.menu.video_list,
-                menu);
+        getMenuInflater().inflate(R.menu.video_list, menu);
         return true;
     }
 

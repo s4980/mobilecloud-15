@@ -67,15 +67,6 @@ public class RateVideoService extends IntentService {
                             .addCategory(category);
     }
 
-    public static Intent makeIntent(Context context,
-                                    long id,
-                                    String category) {
-        return new Intent(context,
-                RateVideoService.class)
-                .putExtra(EXTRA_VIDEO_ID, id)
-                .addCategory(category);
-    }
-
     @Override
     protected void onHandleIntent(Intent intent) {
         // Create VideoDataMediator that will mediate the communication
@@ -96,10 +87,6 @@ public class RateVideoService extends IntentService {
             // Upload is completed.
             sendBroadcast(video);
         }
-
-        // Send the Broadcast to VideoListActivity that the Video
-        // Upload is completed.
-//        sendBroadcast();
     }
 
     private void sendBroadcast(Video video) {
@@ -116,17 +103,5 @@ public class RateVideoService extends IntentService {
 
         LocalBroadcastManager.getInstance(this)
                 .sendBroadcast(intent);
-    }
-
-    /**
-     * Send the Broadcast to Activity that the Video Upload is
-     * completed.
-     */
-    private void sendBroadcast(){
-        // Use a LocalBroadcastManager to restrict the scope of this
-        // Intent to the VideoUploadClient application.
-        LocalBroadcastManager.getInstance(this)
-                .sendBroadcast(new Intent(ACTION_RATE_VIDEO_SERVICE_RESPONSE)
-                        .addCategory("Rate"));
     }
 }

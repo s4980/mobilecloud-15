@@ -150,12 +150,10 @@ public class VideoStorageUtils {
      * Notifies the MediaScanners after Downloading the Video, so it
      * is immediately available to the user.
      */
-    private static void notifyMediaScanners(Context context,
-                                            File videoFile) {
+    private static void notifyMediaScanners(Context context, File videoFile) {
         // Tell the media scanner about the new file so that it is
         // immediately available to the user.
-        MediaScannerConnection.scanFile
-                (context,
+        MediaScannerConnection.scanFile(context,
                         new String[] { videoFile.toString() },
                         null,
                         new MediaScannerConnection.OnScanCompletedListener() {

@@ -13,6 +13,7 @@ import video.mooc.coursera.videodownloader.common.GenericAsyncTask;
 import video.mooc.coursera.videodownloader.common.GenericAsyncTaskOps;
 import video.mooc.coursera.videodownloader.common.Utils;
 import video.mooc.coursera.videodownloader.model.mediator.VideoDataMediator;
+import video.mooc.coursera.videodownloader.model.services.DownloadVideoService;
 import video.mooc.coursera.videodownloader.model.services.RateVideoService;
 import video.mooc.coursera.videodownloader.model.services.UploadVideoService;
 import video.mooc.coursera.videodownloader.view.ui.VideoAdapter;
@@ -141,10 +142,11 @@ public class VideoOps
                                 videoUri));
     }
 
-    public void rateVideo(long id, float rating){
-        mVideoView.get().getActivityContext().startService(
-                RateVideoService.makeIntent(
-                        mVideoView.get().getApplicationContext(), id, rating, "Rate"));
+    public void downloadVideo(long id){
+        // Sends an Intent command to the UploadVideoService.
+        mVideoView.get().getApplicationContext().startService
+                (DownloadVideoService.makeIntent
+                        (mVideoView.get().getApplicationContext(), id));
     }
 
     /**
